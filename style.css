@@ -1,0 +1,206 @@
+body{
+    width: 100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    background: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 33,3% 33,3% 33,3%;
+    grid-template-rows: 150px 10% 50% 1000px;
+    grid-template-areas: 
+    "header header header"
+    "sidebar sidebar sidebar"
+    "content content content"
+    "footer footer footer";
+}
+
+
+
+
+.header{
+    margin-top: 0px;
+    text-align: center;
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 33,3% 33,3% 33,3%;
+    grid-template-rows: 65% 35%;
+    grid-template-areas: 
+    "title title title"
+    "about about about";
+}
+
+#name{
+    grid-area: title;
+    font-size: x-large;
+    font-size:64px!important;
+    margin-top: 30px;
+}
+
+.aboutbox{
+    grid-area: about;   
+}
+
+#abouttext{
+    margin-top: 10px;
+    font-size: medium;
+}
+
+#aboutscore{
+    margin: 5px 10px 10px 10px;
+    border-bottom: 1px solid grey;
+}
+
+#menu_button{
+    position: fixed;
+    text-align: center;
+    z-index: 1;
+    top: 150px;
+    left: 10px;
+    
+
+}
+
+/*Sidebar*/
+#sidenav {
+    height: 300px;
+    width: 0px;
+    position: fixed;
+    text-align: center;
+    z-index: 1;
+    top: 150px;
+    left: 10px;
+    opacity: 0.5;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+  
+
+.sidecon{
+    margin-top: 50px;
+}
+
+#sidenav a {
+    padding: 16px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+  
+#sidenav a:hover{
+    color: #f1f1f1;
+  
+}
+  
+.main{
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+  
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+
+.boxes{
+    background: rgb(250, 123, 49);
+    color: white;
+    text-align: center;
+    padding: 15px 0 15px 0;
+    width: 23%;
+    margin: 1% 1% 1% 1%;
+    
+}
+
+#Bild{
+    grid-area: content;
+    margin-left: 40%;
+    z-index: 1;
+
+}
+
+.text{
+    grid-area: footer;
+}
+
+.menu_icon {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    font-size: 0;
+    text-indent: -9999px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    background-color: transparent;
+}
+.menu_icon:focus {
+    outline: none;
+}
+.menu_icon span {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    height: 7px;
+    background: #999;
+}
+.menu_icon span:before,
+.menu_icon span:after {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #999;
+    content: "";
+}
+.menu_icon span:before {
+    top: -14px;
+}
+.menu_icon span:after {
+    bottom: -14px;
+}
+
+.menu_icon-X span {
+    transition: background 0s 0.3s;
+}
+.menu_icon-X span:before,
+.menu_icon-X span:after {
+    transition-duration: 0.3s, 0.3s;
+    transition-delay: 0.3s, 0s;
+}
+.menu_icon-X span:before {
+    transition-property: top, transform;
+}
+.menu_icon-X span:after {
+    transition-property: bottom, transform;
+}
+
+.menu_icon-X.is-active span {
+    background: none;
+}
+.menu_icon-X.is-active span:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+.menu_icon-X.is-active span:after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+.menu_icon-X.is-active span:before,
+.menu_icon-X.is-active span:after {
+    transition-delay: 0s, 0.3s;
+}

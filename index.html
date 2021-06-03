@@ -1,56 +1,80 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Sven Eisenacher</title>
-        <style type="text/css">
-            p {
-                color:red;
-                font-family: sans-serif;
-            }
-
-            body {
-                background:rgb(255, 255, 255); 
-                color: rgb(39, 37, 37);
-                font-family: Arial;
-            }
-
-            .padding{
-                background-color: royalblue;
-                padding: 40px;
-                padding-left: 300px;
-            }
-
-            .border{
-                border: 5px groove black;
-                padding-left:300px;
-                margin: 20px;
-                font-size: 20px;
-                font-weight: bold;
-                font-style: oblique;
-            }
-
-            .anpassen{
-                border-radius: 2px;
-                border: 5px double green;
-                width: 400px;
-                height: 200px;
-                margin: 50px;
-                text-shadow:.2em .2em #ccc;;
-                font-size: 100px;
-            }
-
-            a:link{color:yellow;}
-            a:visited{color:red;}
-            a:hover{background-color:black;
-            color:white;
-            font-weight:bold;}
-            
-        </style>
+    <head>        
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="js/jquery.js"></script>
+        <title>
+            Conzept Site #1
+        </title>
     </head>
-
     <body>
+        <div class="header">
+            <h1 id="name"><b>Sven Eisenacher</b></h1>
 
-        <a class = "anpassen">HALLO HILLE UND KIESOW!</a>
-        
+            <div class="aboutbox">
+                <div id="abouttext">Student at Leibniz Universität Hannover.</div>
+                <div id="aboutscore"></div>
+            </div>
+
+            <div id="sidenav">
+                <div id="menu_button">
+                    <button class="menu_icon menu_icon-X" onclick="Side_nav()">
+                        <span onclick="Side_nav()"></span>
+                    </button>   
+                </div>
+                <div class="sidecon">
+                    <a href="#about">About Me</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact Me</a>
+                </div>
+                
+              </div>
+        </div>
+        <img id="Bild" src="pics/Me2.jpg" width="400px"; height="600px" />
+
+        <h2 class="text">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+            sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            magna aliquyam erat, sed diam voluptua. At vero eos et 
+            accusam et justo duo dolores et ea rebum. Stet clita kasd 
+            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+            amet. Lorem ipsum dolor sit amet, consetetur sadipscing 
+            elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero
+            eos et accusam et justo duo dolores et ea rebum. Stet
+            clita kasd gubergren, no sea takimata sanctus est Lorem
+            ipsum dolor sit amet.
+        </h2>
+        <!--Menü button Steuerung, muss ganz nach unten-->
+        <script>
+        // Open and close sidebar
+            var menu_open = false;
+
+            function Side_nav() {
+
+                if(menu_open == false)
+                {
+                    document.getElementById("sidenav").style.width = "160px";
+                }
+                else
+                {
+                    document.getElementById("sidenav").style.width = "0px";
+                }
+            }
+            
+            $(".menu_icon").stop().click(function(){
+                if(menu_open === false) {
+                    menu_open = true;
+                    $('.menu_icon').addClass('is-active');
+                } else{
+                    menu_open = false;
+                    $('.menu_icon').removeClass('is-active');
+                }
+            });
+        </script>
     </body>
 </html>
